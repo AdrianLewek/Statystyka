@@ -3,13 +3,10 @@ medic <- data.frame(
   c(181, 169, 178, 189, 178, 175, 173, 187, 175, 165, 185, 178, 162, 185))
 names(medic) = c("masa", "wysokosc")
 medic$BMI = medic$masa / (medic$wysokosc / 100)^2
-
 medic$waga = (medic$BMI >= 25) + 2
 medic$waga[which(medic$waga < 3)] = (medic$BMI[which(medic$waga < 3)] >= 18.5) +1
-
 medic$waga = factor(medic$waga, levels = 1:3, labels = c("niedowaga", "prawidlowa", "nadwaga"))
 medic = rbind(medic, data.frame(masa = 62, wysokosc = 190, BMI=62/1.9^2, waga="niedowaga"))
-
 #wyniki
 medic$masa
 medic[,1]

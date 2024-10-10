@@ -10,18 +10,18 @@ zadluzenie <- K*(rr^N-rr^n)/(rr^N-1)
 odsetki <- K*(rr^N-rr^(n-1))/(rr^N-1)*(rr-1)
 rataKapitalu <- rataKredytu - odsetki
 
-kredyt <- data.frame(
+kredyt = data.frame(
   rataKapitalu = rataKapitalu,
   rataKredytu = rataKredytu,
   odsetki = odsetki,
   zadluzenie = zadluzenie
 )
-
+kredyt
 wyniki = list(
   typ_ramki = class(kredyt),
   ramka_Top_10 = head(kredyt, 10),
-  struktura_ramki = struktura_ramki,
   wymiar_ramki =  dim(kredyt),
+  od_100_do_120 = kredyt[100:120,],
   pierwsze_20 = head(kredyt, 20),
   ostatnie_30 = tail(kredyt, 30),
   od_20_do_30 = kredyt[20:30, ],

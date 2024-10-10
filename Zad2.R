@@ -7,12 +7,12 @@ cenaEUR = round(cena/kurs, 0)
 
 ramka = data.frame(cenaPLN = cena, cenaEUR = cenaEUR)
 names(ramka)[2] <- "priceEUR"
-
+sort(unique(cenaEUR))
 wyniki = list(
   minimum = min(cenaEUR),
   maximum = max(cenaEUR),
   ilosc_unikalnych = length(unique(cenaEUR)),
-  ilosc_posortowanych = sort(unique(cenaEUR)),
+  unikalne_posortowanych = sort(unique(cenaEUR)),
   suma = sum(cenaEUR),
   srednia_arytmetyczna = (1/length(cenaEUR)*sum(cenaEUR)),
   srednia_geometryczna = prod(cenaEUR)^(1/length(cenaEUR)),
@@ -20,4 +20,4 @@ wyniki = list(
   mniejsze_od_15_wieksze_od_10 =  sum(cenaEUR > 10 & cenaEUR < 15),
   ramka = ramka
 )
-wyniki
+wynik
